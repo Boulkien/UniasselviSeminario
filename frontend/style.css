@@ -29,10 +29,7 @@ body{
                 0 32px 64px -10px rgba(0,0,0,0.5);
 }
 
-.form {
-}
-
-.signup {
+.signup, .login {
     padding: 16px;
 }
 
@@ -65,6 +62,7 @@ body{
 .form form .field {
     display: flex;
     flex-direction: column;
+    position: relative;
     margin-bottom: 10px;
 }
 
@@ -113,7 +111,16 @@ body{
     cursor: pointer;
 }
 
-.form .link {
+.form form .field i{
+    position: absolute;
+    padding-left: 90%;
+    color: #ccc;
+    top: 70%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.form .link{
     text-align: center;
     margin-bottom: 10px;
     margin-top: 10px;
