@@ -107,7 +107,7 @@
         </section>
     </div>
 
-    <script src="/frontend/scripts/users.js"></script>
+    <script src="scripts/users.js"></script>
 
 </body>
 </html>

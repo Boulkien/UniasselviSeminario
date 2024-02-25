@@ -20,42 +20,43 @@
                 Chat Uniasselvi
             </header>
             
-            <form action="#">
-                <div class="error-txt">Mensagem de Erro</div>
+            <form action="#" enctype="multipart/form-data">
+                <div class="error-txt"></div>
                 <div class="name-details">
                     <div class="field input">
                         <label>Primeiro Nome</label>
-                        <input type="text" placeholder="Primeiro Nome">
+                        <input type="text" name="fname" placeholder="Primeiro Nome" required>
                     </div>
                     <div class="field input">
                         <label>Sobrenome</label>
-                        <input type="text" placeholder="Sobrenome">
+                        <input type="text" name="lname" placeholder="Sobrenome" required>
                     </div>
                 </div>
                 <div class="field input">
                     <label>E-mail</label>
-                    <input type="text" placeholder="Adicione aqui seu e-mail">
+                    <input type="text" name="email" placeholder="Adicione aqui seu e-mail" required>
                 </div>
                 <div class="field input">
                     <label>Senha</label>
-                    <input type="password" placeholder="Adicione aqui sua senha">
+                    <input type="password" name="password" placeholder="Adicione aqui sua senha" required>
                     <i class="fas fa-eye"></i>
                 </div>
                 <div class="field image">
                     <label>Adicione seu avatar</label>
-                    <input type="file">
+                    <input type="file" name="image" required>
                 </div>
                 <div class="field button">
                     <input type="submit" value="Siga para o Chat">
                 </div>
             </form>
 
-            <div class="link">Já tem conta? <a href="#">Entre agora</a></div>
+            <div class="link">Já tem conta? <a href="login.php">Entre agora</a></div>
 
         </section>
 
-        <script src="/frontend/scripts/pass-censor.js"></script>
-
+        <script src="scripts/pass-censor.js"></script>
+        <script src="scripts/signup.js"></script>
+        
     </div>
 </body>
 </html>

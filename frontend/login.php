@@ -20,7 +20,7 @@
             </header>
             
             <form action="#">
-                <div class="error-txt">Mensagem de Erro</div>
+                <div class="error-txt"></div>
 
                 <div class="field input">
                     <label>E-mail</label>
@@ -36,12 +36,13 @@
                 </div>
             </form>
 
-            <div class="link">Ainda não tem conta? <a href="#">Inscreva-se!</a></div>
+            <div class="link">Ainda não tem conta? <a href="index.php">Inscreva-se!</a></div>
 
         </section>
     </div>
 
-    <script src="/frontend/scripts/pass-censor.js"></script>
+    <script src="scripts/pass-censor.js"></script>
+    <script src="scripts/login.js"></script>
 
 
 </body>
