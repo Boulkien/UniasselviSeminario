@@ -93,7 +93,17 @@ body{
     .users .search input,
     .typing-area input
 ):focus{
-    border: 2px solid #00a09f;
+    border: 1px solid #00a09f;
+    color: #f1f1f1;
+    transition: border 0.5s, color 0.5s;
+}
+
+:is(
+    .form form .input input,
+    .users .search input,
+    .typing-area input
+):not(:focus){
+    transition: border 0.5s, color 0.5s;
 }
 
 .form form .name-details {
@@ -160,6 +170,7 @@ body{
     .users header .logout,
 ):hover {
     background-color: rgba(0, 160, 159, 0.4);
+    transition: background-color 0.25s;
 }
 
 :is(
@@ -197,6 +208,11 @@ body{
     color: #ff0;
     text-decoration: none;
     font-weight: 500;
+    transition: color 0.25s;
+}
+
+.form .link a:not(:hover){
+    transition: color 0.25s;
 }
 
 /* CSS para a área de Usuários (Users) */
