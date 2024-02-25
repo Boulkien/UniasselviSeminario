@@ -37,8 +37,8 @@ body{
     font-size: 25px;
     color: #FFFFFF;
     font-weight: 800;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
     border-bottom: 2px solid #1D1D1B;
     text-align: center;
 }
@@ -64,6 +64,7 @@ body{
     text-align: center;
     border-radius: 5px;
     padding: 8px 10px;
+    display: none;
     /* margin-bottom: 10px; */
 }
 
@@ -185,10 +186,15 @@ body{
 .form form .field i{
     position: absolute;
     right: 20px;
-    color: #ccc;
+    color: #a8a8a8;
     top: 70%;
     transform: translateY(-50%);
     cursor: pointer;
+}
+
+.form form .field i.active::before{
+    content: "\f070";
+    color: #f0f0f0;
 }
 
 .form .link{
@@ -272,16 +278,20 @@ body{
     position: relative;
     align-items: center;
     justify-content: space-between;
+    border-radius: 5px;
+    background-color: #383838;
 }
 
 .users .search .text {
-   font-size: 18px;
+   font-size: 12px;
+   color: #ccc;
+   padding-left: 15px;
 }
 
 .users .search input {
     position: absolute;
     height: 45px;
-    width: calc(100% - 45px);
+    width: calc(100% - 60px);
     border: 2px solid #1D1D1B;
     background-color: #2A2A27;
     padding: 0 13px;
@@ -289,19 +299,37 @@ body{
     border-radius: 5px 0 0 5px;
     outline: none;
     color: #ccc;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
  }
 
+.users .search input.active {
+    opacity: 1;
+    pointer-events: auto;
+    width: calc(100% - 50px)    
+}
+
  .users .search button {
-    width: 47px;
+    width: 50px;
     height: 45px;
     border: none;
     outline: none;
-    color: #FFFFFF;
+    color: #00a09f;
     font-size: 17px;
-    background-color: #00a09f;
     border-radius: 0 5px 5px 0;
     cursor: pointer;
-    transition: background-color 0.25s;
+    transition: all 0.25s ease;
+    background-color: #383838;
+ }
+
+ .users .search button.active{
+    background-color: #00a09f;
+    color: #FFFFFF;
+ }
+
+ .users .search button.active i::before{
+    content: "\f00d";
  }
 
  .users-list {
