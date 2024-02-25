@@ -13,49 +13,36 @@
 </head>
 <body>
     <div class="wrapper">
-        <section class="form signup">
-            
+        <section class="form login">
             <header>
-                <img src="/imgs/uniasselvi-logo.png" class="logo-uniasselvi" alt="">
+                <img src="../imgs/uniasselvi-logo.png" class="logo-uniasselvi" alt="">
                 Chat Uniasselvi
             </header>
             
             <form action="#">
                 <div class="error-txt">Mensagem de Erro</div>
-                <div class="name-details">
-                    <div class="field input">
-                        <label>Primeiro Nome</label>
-                        <input type="text" placeholder="Primeiro Nome">
-                    </div>
-                    <div class="field input">
-                        <label>Sobrenome</label>
-                        <input type="text" placeholder="Sobrenome">
-                    </div>
-                </div>
+
                 <div class="field input">
                     <label>E-mail</label>
-                    <input type="text" placeholder="Adicione aqui seu e-mail">
+                    <input type="text" placeholder="Digite seu e-mail">
                 </div>
                 <div class="field input">
                     <label>Senha</label>
-                    <input type="password" placeholder="Adicione aqui sua senha">
+                    <input type="password" placeholder="Digite sua senha">
                     <i class="fas fa-eye"></i>
                 </div>
-                <div class="field image">
-                    <label>Adicione seu avatar</label>
-                    <input type="file">
-                </div>
                 <div class="field button">
-                    <input type="submit" value="Siga para o Chat">
+                    <input type="submit" value="Vá para o Chat">
                 </div>
             </form>
 
-            <div class="link">Já tem conta? <a href="#">Entre agora</a></div>
+            <div class="link">Ainda não tem conta? <a href="#">Inscreva-se!</a></div>
 
         </section>
-
-        <script src="/frontend/scripts/pass-censor.js"></script>
-
     </div>
+
+    <script src="/frontend/scripts/pass-censor.js"></script>
+
+
 </body>
 </html>

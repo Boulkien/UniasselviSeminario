@@ -17,7 +17,7 @@
         <section class="users">
             <header>
                 <div class="content">
-                    <img src="/imgs/img1.jpeg" alt="">
+                    <img src="../imgs/img1.jpeg" alt="">
                     <div class="details">
                         <span>Sukuna</span>
                         <p>Online</p>
@@ -35,7 +35,7 @@
             <div class="users-list">
                 <a href="#">
                     <div class="content">
-                        <img src="/imgs/img2.jpeg" alt="">
+                        <img src="../imgs/img2.jpeg" alt="">
                         <div class="details">
                             <span>Luffy</span>
                             <p>Mensagem de teste</p>
@@ -45,7 +45,7 @@
                 </a>
                 <a href="#">
                     <div class="content">
-                        <img src="/imgs/img2.jpeg" alt="">
+                        <img src="../imgs/img2.jpeg" alt="">
                         <div class="details">
                             <span>Luffy</span>
                             <p>Mensagem de teste</p>
@@ -55,7 +55,7 @@
                 </a>
                 <a href="#">
                     <div class="content">
-                        <img src="/imgs/img2.jpeg" alt="">
+                        <img src="../imgs/img2.jpeg" alt="">
                         <div class="details">
                             <span>Luffy</span>
                             <p>Mensagem de teste</p>
@@ -65,7 +65,7 @@
                 </a>
                 <a href="#">
                     <div class="content">
-                        <img src="/imgs/img2.jpeg" alt="">
+                        <img src="../imgs/img2.jpeg" alt="">
                         <div class="details">
                             <span>Luffy</span>
                             <p>Mensagem de teste</p>
@@ -75,7 +75,7 @@
                 </a>
                 <a href="#">
                     <div class="content">
-                        <img src="/imgs/img2.jpeg" alt="">
+                        <img src="../imgs/img2.jpeg" alt="">
                         <div class="details">
                             <span>Luffy</span>
                             <p>Mensagem de teste</p>
@@ -85,7 +85,7 @@
                 </a>
                 <a href="#">
                     <div class="content">
-                        <img src="/imgs/img2.jpeg" alt="">
+                        <img src="../imgs/img2.jpeg" alt="">
                         <div class="details">
                             <span>Luffy</span>
                             <p>Mensagem de teste</p>
@@ -95,7 +95,7 @@
                 </a>
                 <a href="#">
                     <div class="content">
-                        <img src="/imgs/img2.jpeg" alt="">
+                        <img src="../imgs/img2.jpeg" alt="">
                         <div class="details">
                             <span>Luffy</span>
                             <p>Mensagem de teste</p>
