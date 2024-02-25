@@ -37,10 +37,17 @@ body{
     font-size: 25px;
     color: #FFFFFF;
     font-weight: 800;
-    /* padding-top: 10px; */
     padding-bottom: 10px;
     margin-bottom: 10px;
     border-bottom: 2px solid #1D1D1B;
+    text-align: center;
+}
+
+:is(.form.signup, .form.login) img.logo-uniasselvi{
+    border-radius: 0px;
+    height: 80px;
+    display: block;
+    margin: 10px auto;   
 }
 
 .form form {
@@ -120,6 +127,16 @@ body{
    border-radius: 3px;
    cursor: pointer;
    font-size: 17px;
+   margin-right: 10px;
+}
+
+.form form .image input::file-selector-button:hover {
+    background-color: #dfdfdf;
+}
+
+.form form .image input::file-selector-button:active {
+    background-color: #f1f1f1;
+    font-weight: 500;
 }
 
 .form form .button input {
@@ -172,12 +189,14 @@ body{
 }
 
 .form .link a{
-    color: #ff0;
+    color: rgba(255, 255, 0, 0.7);
     text-decoration: none;
 }
 
 .form .link a:hover{
-    text-decoration: underline;
+    color: #ff0;
+    text-decoration: none;
+    font-weight: 500;
 }
 
 /* CSS para a área de Usuários (Users) */
