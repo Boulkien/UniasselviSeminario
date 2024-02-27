@@ -24,11 +24,11 @@
 
                 <div class="field input">
                     <label>E-mail</label>
-                    <input type="text" placeholder="Digite seu e-mail">
+                    <input type="text" name="email" placeholder="Digite seu e-mail">
                 </div>
                 <div class="field input">
                     <label>Senha</label>
-                    <input type="password" placeholder="Digite sua senha">
+                    <input type="password" name="password" placeholder="Digite sua senha">
                     <i class="fas fa-eye"></i>
                 </div>
                 <div class="field button">

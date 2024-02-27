@@ -18,13 +18,15 @@ continueButton.onclick = () => {
             if (xmlRequest.status === 200){
                 let data = xmlRequest.response;
 
-                if(data == "success") {
-                    location.href = "users.php";
-                } else {
-                    console.log('teste2')
-                    errorText.textContent = data;
-                    errorText.style.display = "block";
-                }
+                console.log(data)
+
+                // if(data == "success") {
+                //     location.href = "users.php";
+                // } else {
+                //     console.log('teste2')
+                //     errorText.textContent = data;
+                //     errorText.style.display = "block";
+                // }
             }
         }
     }
