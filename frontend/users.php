@@ -1,26 +1,37 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat Uniasselvi</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-    
-</head>
+<?php 
+    session_start();
+    if(!isset($_SESSION['unique_id'])){
+        header("location: login.php");
+    }
+?>
+
+<?php include_once "header.php"; ?>
+
 <body>
     <div class="wrapper">
 
         <section class="users">
             <header>
+            
+            <?php
+                include_once "../backend/config.php";
+
+                $sql = mysqli_query($connection, "SELECT * FROM users WHERE unique_id = {$_SESSION['unique_id']}");
+
+                if(mysqli_num_rows($sql) > 0){
+                    $result = mysqli_fetch_assoc($sql);
+                }
+            ?>
+
                 <div class="content">
-                    <img src="../imgs/img1.jpeg" alt="">
+                    <img src="../backend/images/<?php echo $result['img'];?>" alt="">
                     <div class="details">
-                        <span>Sukuna</span>
-                        <p>Online</p>
+                        <span>
+                            <?php echo $result['fname'] . " " . $result['lname'];?>
+                        </span>
+                        <p>
+                            <?php echo $result['status'];?>
+                        </p>
                     </div>
                 </div>
                 <a href="#" class="logout">Sair</a>

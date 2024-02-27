@@ -21,7 +21,6 @@ continueButton.onclick = () => {
                 if(data == "success") {
                     location.href = "users.php";
                 } else {
-                    console.log('teste2')
                     errorText.textContent = data;
                     errorText.style.display = "block";
                 }

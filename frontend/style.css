@@ -254,6 +254,7 @@ body{
 :is(.users, .users-list) .details{
     padding-left: 15px;
     color: #FFFFFF;
+
 }
 
 :is(.users, .users-list) .details span{

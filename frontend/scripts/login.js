@@ -20,13 +20,12 @@ continueButton.onclick = () => {
 
                 console.log(data)
 
-                // if(data == "success") {
-                //     location.href = "users.php";
-                // } else {
-                //     console.log('teste2')
-                //     errorText.textContent = data;
-                //     errorText.style.display = "block";
-                // }
+                if(data == "success") {
+                    location.href = "users.php";
+                } else {
+                    errorText.textContent = data;
+                    errorText.style.display = "block";
+                }
             }
         }
     }

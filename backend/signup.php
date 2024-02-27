@@ -38,7 +38,7 @@
                         if(move_uploaded_file($tmp_name, "images/".$new_img_name)){
 
                             $random_id = rand(time(), 10000000);
-                            $status = "Active Now";
+                            $status = "Online";
 
                             //inserindo os dados do usuário na tabela 
                             $insert_query = mysqli_query($connection, "INSERT INTO users (unique_id, fname, lname, email, password, img, status)
