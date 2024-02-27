@@ -254,7 +254,9 @@ body{
 :is(.users, .users-list) .details{
     padding-left: 15px;
     color: #FFFFFF;
-
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
 }
 
 :is(.users, .users-list) .details span{

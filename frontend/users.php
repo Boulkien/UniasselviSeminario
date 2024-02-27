@@ -44,76 +44,7 @@
             </div>
 
             <div class="users-list">
-                <a href="#">
-                    <div class="content">
-                        <img src="../imgs/img2.jpeg" alt="">
-                        <div class="details">
-                            <span>Luffy</span>
-                            <p>Mensagem de teste</p>
-                        </div>
-                    </div>
-                    <div class="status-dot"><i class="fas fa-circle"></i></div>
-                </a>
-                <a href="#">
-                    <div class="content">
-                        <img src="../imgs/img2.jpeg" alt="">
-                        <div class="details">
-                            <span>Luffy</span>
-                            <p>Mensagem de teste</p>
-                        </div>
-                    </div>
-                    <div class="status-dot"><i class="fas fa-circle"></i></div>
-                </a>
-                <a href="#">
-                    <div class="content">
-                        <img src="../imgs/img2.jpeg" alt="">
-                        <div class="details">
-                            <span>Luffy</span>
-                            <p>Mensagem de teste</p>
-                        </div>
-                    </div>
-                    <div class="status-dot"><i class="fas fa-circle"></i></div>
-                </a>
-                <a href="#">
-                    <div class="content">
-                        <img src="../imgs/img2.jpeg" alt="">
-                        <div class="details">
-                            <span>Luffy</span>
-                            <p>Mensagem de teste</p>
-                        </div>
-                    </div>
-                    <div class="status-dot"><i class="fas fa-circle"></i></div>
-                </a>
-                <a href="#">
-                    <div class="content">
-                        <img src="../imgs/img2.jpeg" alt="">
-                        <div class="details">
-                            <span>Luffy</span>
-                            <p>Mensagem de teste</p>
-                        </div>
-                    </div>
-                    <div class="status-dot"><i class="fas fa-circle"></i></div>
-                </a>
-                <a href="#">
-                    <div class="content">
-                        <img src="../imgs/img2.jpeg" alt="">
-                        <div class="details">
-                            <span>Luffy</span>
-                            <p>Mensagem de teste</p>
-                        </div>
-                    </div>
-                    <div class="status-dot"><i class="fas fa-circle"></i></div>
-                </a>
-                <a href="#">
-                    <div class="content">
-                        <img src="../imgs/img2.jpeg" alt="">
-                        <div class="details">
-                            <span>Luffy</span>
-                            <p>Mensagem de teste</p>
-                        </div>
-                    </div>
-                    <div class="status-dot"><i class="fas fa-circle"></i></div>
-                </a>
+                
             </div>
         </section>
     </div>
