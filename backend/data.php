@@ -1,7 +1,7 @@
 <?php 
 
     while($result = mysqli_fetch_assoc($sql)){
-        $output .= '<a href="#">
+        $output .= '<a href="chat.php?user_id='. $result['unique_id'] .'">
                         <div class="content">
                             <img src="../backend/images/'. $result['img'] .'".alt="">
                             <div class="details">

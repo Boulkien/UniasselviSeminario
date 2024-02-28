@@ -338,6 +338,7 @@ body{
  .users-list {
     max-height: 350px;
     overflow-y: auto;
+    color: #a8a8a8;
  }
 
  :is(.chat-box, .users-list)::-webkit-scrollbar {
@@ -364,6 +365,7 @@ body{
  .users-list a:last-child{
     margin-bottom: 0px;
     border: none;
+    padding-bottom: 0px;
  }
 
  .users-list a .status-dot{
