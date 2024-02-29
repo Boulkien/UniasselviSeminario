@@ -375,7 +375,6 @@ body{
 
  /* Guardar variável para aplicar no php quando o status for Offline */
  .users-list a .status-dot.offline{
-    font-size: 12px;
     color: #5f5f5f;
  }
 

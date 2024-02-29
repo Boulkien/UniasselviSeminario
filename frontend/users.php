@@ -34,7 +34,7 @@
                         </p>
                     </div>
                 </div>
-                <a href="#" class="logout">Sair</a>
+                <a href="../backend/logout.php?logout_id=<?php echo $result['unique_id']?>" class="logout">Sair</a>
             </header>
 
             <div class="search">

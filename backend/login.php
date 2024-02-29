@@ -15,8 +15,13 @@
         //Se as credenciais do usuário forem compatíveis
         if(mysqli_num_rows($sql) > 0){
             $result = mysqli_fetch_assoc($sql);
-            $_SESSION['unique_id'] = $result['unique_id'];
-            echo "success";
+            $status = "Online";
+            $update_query = mysqli_query($connection, "UPDATE users SET status = '{$status}' WHERE unique_id = {$result['unique_id']}");
+            
+            if($update_query){
+                $_SESSION['unique_id'] = $result['unique_id'];
+                echo "success";
+            }
         }else{
             echo "E-mail ou senha inválidos!";
         }
