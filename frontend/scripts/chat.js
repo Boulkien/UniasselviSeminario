@@ -16,6 +16,7 @@ sendButton.onclick = () => {
         if(xmlRequest.readyState === XMLHttpRequest.DONE){
             if (xmlRequest.status === 200){
               inputField.value = ""; 
+              scrollToBottom();
             }
         }
     }
@@ -23,6 +24,14 @@ sendButton.onclick = () => {
     let formData = new FormData(form); //Criando novo objeto formData
 
     xmlRequest.send(formData); //Enviando o form para o php
+}
+
+chatBox.onmouseenter = () => {
+    chatBox.classList.add('active')
+}
+
+chatBox.onmouseleave = () => {
+    chatBox.classList.remove('active')
 }
 
 setInterval(() => {
@@ -36,6 +45,10 @@ setInterval(() => {
             if (xmlRequest.status === 200){
                 let data = xmlRequest.response;
                 chatBox.innerHTML = data;
+                
+                if(!chatBox.classList.contains("active")){
+                    scrollToBottom();
+                }
             }
         }
     }
@@ -43,3 +56,7 @@ setInterval(() => {
     xmlRequest.send(formData); //Enviando o form para o php
 
 }, 500);
+
+function scrollToBottom(){
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
