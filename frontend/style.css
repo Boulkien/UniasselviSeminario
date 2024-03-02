@@ -11,6 +11,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: #ccc;
 }
 
 body{
@@ -90,8 +91,7 @@ body{
 }
 
 .form form .input input:-webkit-autofill {
-    background-color: red; /* Defina a cor vermelha desejada */
-    color: white; /* Define a cor do texto */
+    -webkit-text-fill-color: #00a09f; /* Define a cor do texto */
 }
 
 :is(
@@ -101,7 +101,7 @@ body{
 ):focus{
     border: 1px solid #00a09f;
     color: #f1f1f1;
-    transition: border 0.5s, color 0.5s;
+    transition: border 0.5s;
 }
 
 :is(
@@ -109,7 +109,7 @@ body{
     .users .search input,
     .typing-area input
 ):not(:focus){
-    transition: border 0.5s, color 0.5s;
+    transition: border 0.5s;
 }
 
 .form form .name-details {
