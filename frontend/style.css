@@ -89,6 +89,11 @@ body{
     color: #ccc;
 }
 
+.form form .input input:-webkit-autofill {
+    background-color: red; /* Defina a cor vermelha desejada */
+    color: white; /* Define a cor do texto */
+}
+
 :is(
     .form form .input input,
     .users .search input,

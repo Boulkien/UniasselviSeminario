@@ -12,11 +12,11 @@
 
                 <div class="field input">
                     <label>E-mail</label>
-                    <input type="text" name="email" placeholder="Digite seu e-mail">
+                    <input type="text" name="email" placeholder="Digite seu e-mail" autocomplete="on">
                 </div>
                 <div class="field input">
                     <label>Senha</label>
-                    <input type="password" name="password" placeholder="Digite sua senha">
+                    <input type="password" name="password" placeholder="Digite sua senha" autocomplete="on">
                     <i class="fas fa-eye"></i>
                 </div>
                 <div class="field button">

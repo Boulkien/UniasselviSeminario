@@ -12,21 +12,21 @@
                 <div class="error-txt"></div>
                 <div class="name-details">
                     <div class="field input">
-                        <label>Primeiro Nome</label>
-                        <input type="text" name="fname" placeholder="Primeiro Nome" required>
+                        <label>Nome</label>
+                        <input type="text" name="fname" placeholder="Nome" autocomplete="on" required>
                     </div>
                     <div class="field input">
                         <label>Sobrenome</label>
-                        <input type="text" name="lname" placeholder="Sobrenome" required>
+                        <input type="text" name="lname" placeholder="Sobrenome" autocomplete="on" required>
                     </div>
                 </div>
                 <div class="field input">
                     <label>E-mail</label>
-                    <input type="text" name="email" placeholder="Adicione aqui seu e-mail" required>
+                    <input type="text" name="email" placeholder="Adicione aqui seu e-mail" autocomplete="on" required>
                 </div>
                 <div class="field input">
                     <label>Senha</label>
-                    <input type="password" name="password" placeholder="Adicione aqui sua senha" required>
+                    <input type="password" name="password" placeholder="Adicione aqui sua senha" autocomplete="on" required>
                     <i class="fas fa-eye"></i>
                 </div>
                 <div class="field image">
