@@ -28,6 +28,7 @@
                     <div class="details">
                         <span>
                             <?php echo $result['fname'] . " " . $result['lname'];?>
+                            <i class="fa-solid fa-user-xmark"></i>
                         </span>
                         <p>
                             <?php echo $result['status'];?>

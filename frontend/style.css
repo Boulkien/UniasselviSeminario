@@ -7,7 +7,7 @@
     font-style: normal;
 }
 
-*, *::after, *::before {
+*, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -261,14 +261,39 @@ body{
     color: #FFFFFF;
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    gap: 2px;
 }
 
 :is(.users, .users-list) .details span{
     font-size: 18px;
+    display: flex;
+    align-items: center;
     font-weight: 500;
     outline: none;
 }
+
+.users .details i{
+    font-size: 15px;
+    margin-left: 10px;
+    color: #ccc;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    width: 25px;
+    border-radius: 5px;
+    transition: background-color 0.25s;
+}
+
+.users .details i:hover {
+    background: rgb(189, 71, 71);   
+}
+
+.users .details i:active {
+    background: rgb(207, 63, 63);    
+}
+
 
 .users header .logout{
    color: #FFFFFF;
@@ -300,7 +325,7 @@ body{
     position: absolute;
     height: 45px;
     width: calc(100% - 60px);
-    border: 2px solid #1D1D1B;
+    border: 1px solid #1D1D1B;
     background-color: #2A2A27;
     padding: 0 13px;
     font-size: 16px;
