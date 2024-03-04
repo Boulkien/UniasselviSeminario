@@ -28,7 +28,7 @@
                     <div class="details">
                         <span>
                             <?php echo $result['fname'] . " " . $result['lname'];?>
-                            <i class="fa-solid fa-user-xmark"></i>
+                            <i class="fa-solid fa-user-xmark delete-account-button"></i>
                         </span>
                         <p>
                             <?php echo $result['status'];?>
@@ -51,6 +51,7 @@
     </div>
 
     <script src="scripts/users.js"></script>
+    <script src="scripts/delete-account.js"></script>
 
 </body>
 </html>
