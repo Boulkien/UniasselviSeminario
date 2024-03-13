@@ -1,26 +1,29 @@
 <?php
-    session_start();
+session_start();
 
-    include_once "config.php";
+include_once "config.php";
 
-    $fname = mysqli_real_escape_string($connection, $_POST['fname']);
-    $lname = mysqli_real_escape_string($connection, $_POST['lname']);
-    $email = mysqli_real_escape_string($connection, $_POST['email']);
-    $password = mysqli_real_escape_string($connection, $_POST['password']);
-    // $image = mysqli_real_escape_string($connection, $_POST['image']);
+$fname = mysqli_real_escape_string($connection, $_POST['fname']);
+$lname = mysqli_real_escape_string($connection, $_POST['lname']);
+$email = mysqli_real_escape_string($connection, $_POST['email']);
+$password = mysqli_real_escape_string($connection, $_POST['password']);
 
-    if(!empty($fname) && !empty($lname) && !empty($email) && !empty($password)) {
-        //Verificando se o e-mail do usuário é válido 
-        if(filter_var($email, FILTER_VALIDATE_EMAIL)){
+if(!empty($fname) && !empty($lname) && !empty($email) && !empty($password)) {
+    // Verificando se o e-mail do usuário é válido 
+    if(filter_var($email, FILTER_VALIDATE_EMAIL)){
 
-            //Verificando se o e-mail já existe no banco de dados
-            $sql = mysqli_query($connection, "SELECT email FROM users WHERE email = '{$email}'");
+        // Verificando se o e-mail já existe no banco de dados
+        $sql = "SELECT email FROM users WHERE email = ?";
+        $stmt = mysqli_prepare($connection, $sql);
+        mysqli_stmt_bind_param($stmt, "s", $email);
+        mysqli_stmt_execute($stmt);
+        $query = mysqli_stmt_get_result($stmt);
 
-            if(mysqli_num_rows($sql) > 0){
-                echo "$email - Este e-mail já existe em nossa base!";
-            } else {
-                //Verificando se o usuário fez upload de um arquivo ou não
-                if(isset($_FILES['image'])){
+        if(mysqli_num_rows($query) > 0){
+            echo "$email - Este e-mail já existe em nossa base!";
+        } else {
+            // Verificando se o usuário fez upload de um arquivo ou não
+            if(isset($_FILES['image'])){
                     $img_name = $_FILES['image']['name']; 
                     $img_type = $_FILES['image']['type'];
                     $tmp_name = $_FILES['image']['tmp_name'];

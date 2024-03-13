@@ -1,36 +1,35 @@
 const form = document.querySelector(".login form"),
-            continueButton = form.querySelector(".button input"),
-            errorText = form.querySelector(".error-txt");
+    continueButton = form.querySelector(".button input"),
+    errorText = form.querySelector(".error-txt");
 
-form.onsubmit = (n) => {
-    n.preventDefault();
-}
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+});
 
-continueButton.onclick = () => {
+continueButton.addEventListener("click", () => {
+    const formData = new FormData(form);
 
-    //AJAX Code
-
-    let xmlRequest = new XMLHttpRequest();
-    xmlRequest.open("POST", "../backend/login.php");
-
-    xmlRequest.onload = ()=> {
-        if(xmlRequest.readyState === XMLHttpRequest.DONE){
-            if (xmlRequest.status === 200){
-                let data = xmlRequest.response;
-
-                console.log(data)
-
-                if(data == "success") {
-                    location.href = "users.php";
-                } else {
-                    errorText.textContent = data;
-                    errorText.style.display = "block";
-                }
-            }
+    fetch("../backend/login.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Erro ao fazer login.");
         }
-    }
+        return response.text();
+    })
+    .then(data => {
+        console.log("Resposta do servidor:", data); // Adicione esta linha para verificar a resposta do servidor no console
+        if (data.trim() === "success") { // Use trim() para remover espaços em branco extras
+            location.href = "users.php";
+        } else {
+            errorText.textContent = data;
+            errorText.style.display = "block";
+        }
+    })
+    .catch(error => {
+        console.error("Erro:", error.message);
+    });
+});
 
-    let formData = new FormData(form); //Criando novo objeto formData
-
-    xmlRequest.send(formData); //Enviando o form para o php
-}  

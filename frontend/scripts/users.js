@@ -1,58 +1,58 @@
 const searchBar = document.querySelector(".users .search input"),
-        searchButton = document.querySelector(".users .search button"),
-        usersList = document.querySelector(".users .users-list");
-        
-searchButton.onclick = () => {
+    searchButton = document.querySelector(".users .search button"),
+    usersList = document.querySelector(".users .users-list");
+
+searchButton.addEventListener("click", () => {
     searchBar.classList.toggle("active");
     searchBar.focus();
     searchButton.classList.toggle("active");
     searchBar.value = "";
-}
+});
 
-searchBar.onkeyup = () => {
-    let searchTerm = searchBar.value;
+searchBar.addEventListener("keyup", () => {
+    const searchTerm = searchBar.value;
 
-    if(searchTerm != ""){
+    if (searchTerm !== "") {
         searchBar.classList.add("active");
     } else {
         searchBar.classList.remove("active");
     }
 
-    //AJAX Code
-
-    let xmlRequest = new XMLHttpRequest();
-    xmlRequest.open("POST", "../backend/search.php", true);
-
-    xmlRequest.onload = ()=> {
-        if(xmlRequest.readyState === XMLHttpRequest.DONE){
-            if (xmlRequest.status === 200){
-                let data = xmlRequest.response;
-                usersList.innerHTML = data;                
-                
-            }
+    fetch("../backend/search.php", {
+        method: "POST",
+        body: "searchTerm=" + encodeURIComponent(searchTerm),
+        headers: {
+            "Content-type": "application/x-www-form-urlencoded"
         }
-    }
-    xmlRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xmlRequest.send("searchTerm=" + searchTerm);
-}
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Erro ao buscar usuários.");
+        }
+        return response.text();
+    })
+    .then(data => {
+        usersList.innerHTML = data;
+    })
+    .catch(error => {
+        console.error("Erro:", error.message);
+    });
+});
 
-//Atualizando a página a cada 500ms 
 setInterval(() => {
-    //AJAX Code
-
-    let xmlRequest = new XMLHttpRequest();
-    xmlRequest.open("GET", "../backend/users.php", true);
-
-    xmlRequest.onload = ()=> {
-        if(xmlRequest.readyState === XMLHttpRequest.DONE){
-            if (xmlRequest.status === 200){
-                let data = xmlRequest.response;
-                if(!searchBar.classList.contains("active")){
-                    usersList.innerHTML = data;
-                }
-            }
+    fetch("../backend/users.php")
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Erro ao buscar usuários.");
         }
-    }
-    xmlRequest.send();
-
+        return response.text();
+    })
+    .then(data => {
+        if (!searchBar.classList.contains("active")) {
+            usersList.innerHTML = data;
+        }
+    })
+    .catch(error => {
+        console.error("Erro:", error.message);
+    });
 }, 500);

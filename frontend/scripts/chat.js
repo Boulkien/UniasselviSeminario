@@ -1,62 +1,64 @@
 const form = document.querySelector(".typing-area"),
-            inputField = form.querySelector(".input-field"),
-            sendButton = form.querySelector("button"),
-            chatBox = document.querySelector(".chat-box");
+    inputField = form.querySelector(".input-field"),
+    sendButton = form.querySelector("button"),
+    chatBox = document.querySelector(".chat-box");
 
-form.onsubmit = (n) => {
-    n.preventDefault();
-}            
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+});
 
-sendButton.onclick = () => {
-    
-    let xmlRequest = new XMLHttpRequest();
-    xmlRequest.open("POST", "../backend/insert-chat.php");
+sendButton.addEventListener("click", () => {
+    const formData = new FormData(form);
 
-    xmlRequest.onload = ()=> {
-        if(xmlRequest.readyState === XMLHttpRequest.DONE){
-            if (xmlRequest.status === 200){
-              inputField.value = ""; 
-              scrollToBottom();
-            }
+    fetch("../backend/insert-chat.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Erro ao enviar mensagem.");
         }
-    }
+        return response.text();
+    })
+    .then(data => {
+        inputField.value = "";
+        scrollToBottom();
+    })
+    .catch(error => {
+        console.error("Erro:", error.message);
+    });
+});
 
-    let formData = new FormData(form); //Criando novo objeto formData
+chatBox.addEventListener("mouseenter", () => {
+    chatBox.classList.add('active');
+});
 
-    xmlRequest.send(formData); //Enviando o form para o php
-}
-
-chatBox.onmouseenter = () => {
-    chatBox.classList.add('active')
-}
-
-chatBox.onmouseleave = () => {
-    chatBox.classList.remove('active')
-}
+chatBox.addEventListener("mouseleave", () => {
+    chatBox.classList.remove('active');
+});
 
 setInterval(() => {
-    //AJAX Code
-
-    let xmlRequest = new XMLHttpRequest();
-    xmlRequest.open("POST", "../backend/get-chat.php", true);
-
-    xmlRequest.onload = ()=> {
-        if(xmlRequest.readyState === XMLHttpRequest.DONE){
-            if (xmlRequest.status === 200){
-                let data = xmlRequest.response;
-                chatBox.innerHTML = data;
-                
-                if(!chatBox.classList.contains("active")){
-                    scrollToBottom();
-                }
-            }
+    fetch("../backend/get-chat.php", {
+        method: "POST",
+        body: new FormData(form)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Erro ao buscar mensagens.");
         }
-    }
-    let formData = new FormData(form); //Criando novo objeto formData
-    xmlRequest.send(formData); //Enviando o form para o php
-
+        return response.text();
+    })
+    .then(data => {
+        chatBox.innerHTML = data;
+        if (!chatBox.classList.contains("active")) {
+            scrollToBottom();
+        }
+    })
+    .catch(error => {
+        console.error("Erro:", error.message);
+    });
 }, 500);
 
-function scrollToBottom(){
+function scrollToBottom() {
     chatBox.scrollTop = chatBox.scrollHeight;
 }
